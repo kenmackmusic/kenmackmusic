@@ -22,7 +22,7 @@ FEATURED_SLUG = "grace-note"
 # Posts whose image on this site should be Ken's own file rather than the feed's.
 IMAGE_OVERRIDES = {
     "finding-humanity": ("images/blog-finding-humanity.jpg", None),
-    "the-visit": ("images/blog-the-visit.jpg", "center 40%"),
+    "the-visit": ("images/blog-the-visit-2026.jpg", "center 40%"),
     "grace-note": ("images/blog-grace-note.jpg", "center 22%"),
     "everybody-knows-her-name": ("images/blog-everybody-knows-her-name.jpg", "center 30%"),
 }
