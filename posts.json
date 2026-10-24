@@ -1,0 +1,40 @@
+{
+  "updated": "2026-10-24",
+  "posts": [
+    {
+      "title": "Finding Humanity",
+      "subtitle": "Under a soft white belly",
+      "date": "Sep 15, 2026",
+      "link": "https://kenmackmusic.substack.com/p/finding-humanity",
+      "image": "images/blog-finding-humanity.jpg",
+      "featured": false
+    },
+    {
+      "title": "The Visit",
+      "subtitle": "Two minutes in a sixth-grade hallway",
+      "date": "Aug 9, 2026",
+      "link": "https://kenmackmusic.substack.com/p/the-visit",
+      "image": "images/blog-the-visit.jpg",
+      "imagePosition": "center 40%",
+      "featured": false
+    },
+    {
+      "title": "Grace Note",
+      "subtitle": "Resolving to the tonal home.",
+      "date": "Jun 28, 2026",
+      "link": "https://kenmackmusic.substack.com/p/grace-note",
+      "image": "images/blog-grace-note.jpg",
+      "imagePosition": "center 22%",
+      "featured": true
+    },
+    {
+      "title": "Everybody Knows Her Name",
+      "subtitle": "They are beginning to know mine.",
+      "date": "Mar 19, 2026",
+      "link": "https://kenmackmusic.substack.com/p/everybody-knows-her-name",
+      "image": "images/blog-everybody-knows-her-name.jpg",
+      "imagePosition": "center 30%",
+      "featured": false
+    }
+  ]
+}

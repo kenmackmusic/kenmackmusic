@@ -1,186 +1,586 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenmack Music | Songwriter</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #2c3e2f;
-            background: #e8ebe8;
-        }
-        
-        .banner {
-            width: 100%;
-            height: 200px;
-            background-image: url('banner.jpg');
-            background-size: cover;
-            background-position: bottom;
-            position: relative;
-        }
-        
-        .container {
-            max-width: 700px;
-            margin: -50px auto 0;
-            background: white;
-            padding: 60px 40px;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-            text-align: center;
-            position: relative;
-            z-index: 10;
-        }
-        
-        h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            color: #5a7a5e;
-            font-weight: 700;
-        }
-        
-        .tagline {
-            font-size: 1.3em;
-            color: #6b7c6b;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-        
-        .bio {
-            font-size: 1.1em;
-            line-height: 1.8;
-            color: #4a5a4a;
-            margin-bottom: 40px;
-            text-align: left;
-        }
-        
-        .cta {
-            background: #5a7a5e;
-            color: white;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-size: 1.1em;
-            display: inline-block;
-            margin-bottom: 40px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-        
-        .cta:hover {
-            background: #4a6a4e;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(90, 122, 94, 0.3);
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-        
-        .social-links a {
-            color: #5a7a5e;
-            text-decoration: none;
-            font-size: 1em;
-            padding: 10px 20px;
-            border: 2px solid #5a7a5e;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .social-links a i {
-            font-size: 1.1em;
-        }
-        
-        .social-links a:hover {
-            background: #5a7a5e;
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .contact {
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid #e8ebe8;
-            color: #6b7c6b;
-        }
-        
-        .contact a {
-            color: #5a7a5e;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        
-        .contact a:hover {
-            text-decoration: underline;
-        }
-        
-        @media (max-width: 600px) {
-            .banner {
-                height: 150px;
-            }
-            
-            .container {
-                margin: -30px 20px 0;
-                padding: 40px 25px;
-            }
-            
-            h1 {
-                font-size: 2.2em;
-            }
-            
-            .tagline {
-                font-size: 1.1em;
-            }
-            
-            .bio {
-                font-size: 1em;
-            }
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kenmack Music | Songwriter Ken Mackenzie</title>
+<meta name="description" content="Ken Mackenzie is a Huntsville, Alabama songwriter writing songs about people and the moments that change them, in styles ranging from Americana and country to folk, rock, indie, and pop.">
+<link rel="canonical" href="https://kenmackmusic.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kenmack Music">
+<meta property="og:title" content="Kenmack Music | Songwriter Ken Mackenzie">
+<meta property="og:description" content="Real People, Real Emotions. Songs about people and the moments that change them.">
+<meta property="og:url" content="https://kenmackmusic.com/">
+<meta property="og:image" content="https://kenmackmusic.com/images/banner-honeysuckle.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23526E36'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='40' font-weight='700' fill='%23F2D47A' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #2C3E2F;          /* dark green: all body text */
+  --leaf: #526E36;         /* leaf green from the banner: headings */
+  --brown: #6E460C;        /* honey brown: small labels and links */
+  --gold-hi: #F2D47A;      /* honeysuckle gold, light */
+  --gold-lo: #D4B04F;      /* honeysuckle gold, shaded */
+  --greige: #E8EBE8;
+  --parchment: #F5F0E6;
+  --tan: #EDE5D6;
+  --card: #FFFDF8;
+  --rule: #D8CDBA;
+  --serif: 'Fraunces', Georgia, serif;
+  --sans: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--parchment); color: var(--ink); font-family: var(--sans); font-size: 18px; line-height: 1.6; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--brown); }
+a:hover { color: var(--ink); }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 72px 0; }
+.bg-greige { background: var(--greige); }
+.bg-tan { background: var(--tan); }
+.eyebrow { margin: 0 0 12px; font-size: 14px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--brown); }
+h1, h2, h3, .title { font-family: var(--serif); font-weight: 600; color: var(--leaf); margin: 0; }
+h2 { font-size: 36px; line-height: 1.15; }
+h3 { font-size: 26px; line-height: 1.2; }
+p { margin: 0; }
+.btn { display: inline-flex; align-items: center; gap: 10px; min-height: 48px; padding: 14px 24px; border: none; border-radius: 4px; background: linear-gradient(180deg, var(--gold-hi), var(--gold-lo)); color: var(--ink); font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+.btn:hover { color: var(--ink); filter: brightness(1.04); }
+.btn:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid var(--leaf); outline-offset: 2px; }
+.btn-row { display: flex; flex-wrap: wrap; gap: 14px; }
+
+/* Header */
+.site-header { background: var(--greige); }
+.site-header .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; padding-top: 20px; padding-bottom: 20px; }
+.brand { font-family: var(--serif); font-size: 44px; line-height: 1.1; font-weight: 700; color: var(--leaf); text-decoration: none; letter-spacing: 0.01em; }
+.brand:hover { color: var(--leaf); }
+.nav { display: flex; flex-wrap: wrap; gap: 4px 24px; font-size: 16px; font-weight: 600; }
+.nav a { color: var(--ink); text-decoration: none; padding: 10px 0; }
+.nav a:hover { color: var(--leaf); }
+.banner { width: 100%; height: 220px; object-fit: cover; object-position: center 45%; }
+
+/* Hero */
+.hero .wrap { display: flex; flex-wrap: wrap; gap: 56px; align-items: center; padding-top: 56px; padding-bottom: 72px; }
+.hero-text { flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+.hero-text .eyebrow { margin: 0; }
+.hero h1 { font-size: clamp(32px, 4vw, 42px); line-height: 1.1; }
+.hero-intro { font-size: 20px; max-width: 34em; }
+.hero-photo { flex: 1 1 380px; min-width: 0; }
+.hero-photo img { width: 100%; max-width: 448px; margin: 0 auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 6px; }
+
+/* Currently strip */
+.currently { background: #DCE2DB; border-top: 1px solid #C3CCC3; }
+.currently .wrap { display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: center; padding-top: 18px; padding-bottom: 18px; font-size: 16px; }
+.currently .eyebrow { margin: 0; }
+.currently a { font-weight: 600; }
+
+/* About */
+.about .wrap { display: flex; flex-wrap: wrap; gap: 56px; }
+.about-head { flex: 1 1 320px; min-width: 0; }
+.about-body { flex: 2 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.tags { display: flex; flex-wrap: wrap; gap: 12px; padding: 4px 0 0; margin: 0; list-style: none; }
+.tags li { font-size: 15px; font-weight: 600; padding: 8px 14px; border: 1px solid var(--rule); border-radius: 999px; background: var(--card); }
+
+/* Section heads with a side note */
+.section-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 16px; margin-bottom: 40px; }
+.section-head .note { max-width: 30em; font-size: 16px; }
+
+/* Songs */
+.songs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.song { background: var(--card); border: 1px solid #DCD1BE; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+.song .genre { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brown); }
+.song .logline { font-size: 17px; }
+.song blockquote { margin: auto 0 0; padding: 16px 18px; background: #F2ECE1; border-radius: 4px; font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.5; }
+.song .links { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 15px; font-weight: 600; }
+.small-print { margin-top: 40px; font-size: 14px; max-width: 60em; }
+
+/* Born to Love */
+.btl .wrap { display: flex; flex-wrap: wrap; gap: 56px; align-items: center; }
+.btl-art { flex: 1 1 380px; min-width: 0; }
+.btl-art img { width: 100%; max-width: 480px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 6px; }
+.btl-text { flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.btl-text .eyebrow { margin: 0; }
+.btl-text .lead { font-size: 20px; }
+.btl-text .btn-row { padding-top: 8px; }
+
+/* Blog */
+.posts { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; }
+.post { display: flex; flex-direction: column; gap: 12px; text-decoration: none; color: var(--ink); }
+.post:hover { color: var(--ink); }
+.post:hover .title { text-decoration: underline; }
+.post img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 6px; background: #E6DDCC; }
+.post .meta { font-size: 14px; }
+.post .featured { color: var(--brown); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; font-size: 13px; }
+.post .title { font-size: 22px; line-height: 1.25; }
+.post .sub { font-size: 16px; }
+
+/* Photos */
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+.gallery figure { margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; }
+.gallery figcaption { font-size: 15px; }
+.gallery .zoom { display: block; width: 100%; padding: 0; border: 0; background: none; border-radius: 6px; cursor: zoom-in; }
+.gallery .zoom:hover img { filter: brightness(1.05); }
+.gallery figure.is-hidden { display: none; }
+.more-row { margin-top: 28px; display: flex; justify-content: center; }
+.more-row[hidden] { display: none; }
+
+/* Photo viewer (click a gallery photo to enlarge) */
+.lightbox { width: min(1100px, 96vw); max-height: 94vh; padding: 0; border: 0; border-radius: 8px; background: #1F2A21; color: #F5F0E6; overflow: hidden; }
+.lightbox::backdrop { background: rgba(20, 28, 22, 0.82); }
+.lightbox figure { margin: 0; padding: 56px 64px 24px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.lightbox img { max-width: 100%; max-height: 74vh; width: auto; height: auto; object-fit: contain; border-radius: 4px; }
+.lightbox figcaption { font-size: 16px; text-align: center; max-width: 50em; }
+.lb-btn { position: absolute; display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border: 0; border-radius: 50%; background: rgba(245, 240, 230, 0.14); color: #F5F0E6; cursor: pointer; }
+.lb-btn:hover { background: rgba(245, 240, 230, 0.26); }
+.lb-btn:focus-visible { outline: 3px solid var(--gold-hi); outline-offset: 2px; }
+.lb-close { top: 10px; right: 10px; }
+.lb-prev { left: 10px; top: 50%; transform: translateY(-50%); }
+.lb-next { right: 10px; top: 50%; transform: translateY(-50%); }
+.lb-btn[hidden] { display: none; }
+
+/* Industry */
+.industry .wrap { display: flex; flex-wrap: wrap; gap: 56px; }
+.industry-main { flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 24px; }
+.industry-links { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.details { margin: 0; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); border-top: 1px solid var(--rule); font-size: 16px; }
+.details dt, .details dd { margin: 0; padding: 14px 0; border-bottom: 1px solid var(--rule); }
+.details dt { font-weight: 700; padding-right: 12px; }
+.link-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--rule); }
+.link-list li { border-bottom: 1px solid var(--rule); }
+.link-list a { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 0; text-decoration: none; font-weight: 600; }
+
+/* Contact */
+.contact .wrap { display: flex; flex-wrap: wrap; gap: 56px; }
+.contact-intro { flex: 1 1 360px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
+.contact-intro .eyebrow { margin: 0; }
+.form-card { flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 18px; padding: 36px; border: 1px solid #C3CCC3; border-radius: 6px; background: #F4F6F3; }
+.form-card .title { font-size: 26px; line-height: 1.2; }
+.form { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.form label { display: flex; flex-direction: column; gap: 6px; font-size: 15px; font-weight: 600; }
+.form .full { grid-column: 1 / -1; }
+.form input, .form select, .form textarea { font: inherit; font-weight: 400; padding: 12px 14px; min-height: 48px; border-radius: 4px; border: 1px solid #8FA08F; background: #FFFFFF; color: var(--ink); width: 100%; }
+.form textarea { resize: vertical; }
+.form [aria-invalid="true"] { border-color: #8A2E1F; }
+.field-error { font-size: 13px; font-weight: 400; color: #8A2E1F; }
+.form-success { font-size: 16px; font-weight: 600; color: var(--leaf); }
+.form-error { font-size: 15px; color: #8A2E1F; }
+.form-success:empty, .form-error:empty { display: none; }
+.trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form-note { font-size: 14px; }
+
+/* Footer */
+.site-footer { background: #D6DCD6; font-size: 15px; }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; padding-top: 32px; padding-bottom: 32px; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 20px; }
+.site-footer a { color: var(--ink); }
+
+@media (max-width: 600px) {
+  body { font-size: 17px; }
+  .brand { font-size: 34px; }
+  .section { padding: 56px 0; }
+  h2 { font-size: 30px; }
+  .hero .wrap { padding-top: 40px; padding-bottom: 56px; gap: 40px; }
+  .hero-intro, .btl-text .lead { font-size: 18px; }
+  .banner { height: 150px; }
+  .form-card { padding: 24px; }
+  .about .wrap, .btl .wrap, .industry .wrap, .contact .wrap { gap: 28px; }
+  .details { grid-template-columns: 1fr; }
+  .details dt { border-bottom: none; padding-bottom: 0; }
+  .details dd { padding-top: 2px; }
+}
+</style>
 </head>
 <body>
-    <div class="banner"></div>
-    
-    <div class="container">
-        <h1>Kenmack Music</h1>
-        <p class="tagline">Songwriter</p>
-        
-        <div class="bio">
-            <p>Welcome to Kenmack Music. I'm a songwriter based in Huntsville, Alabama, documenting my journey as I build a career in music. Through my blog, I share the honest challenges, small victories, and hard lessons learned along the way.</p>
-            
-            <p style="margin-top: 15px;">I'm writing songs, developing my craft, and navigating the business side of songwriting. This site chronicles the real process of building a catalog and establishing myself in the industry. Follow along from the beginning.</p>
-        </div>
-        
-        <a href="https://kenmackmusic.substack.com" class="cta" target="_blank">Read My Blog</a>
-        
-        <div class="social-links">
-            <a href="https://youtube.com/@kenmackmusic" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
-            <a href="https://instagram.com/kenmackmusic" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="https://facebook.com/kenmackmusic" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
-            <a href="https://x.com/kenmackmusic" target="_blank"><i class="fab fa-x-twitter"></i> X</a>
-            <a href="https://tiktok.com/@kenmackmusic" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
-        </div>
-        
-        <div class="contact">
-            <p>For inquiries: <a href="mailto:contact@kenmackmusic.com">contact@kenmackmusic.com</a></p>
-            <p style="margin-top: 10px; font-size: 0.9em;">Huntsville, Alabama</p>
-        </div>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">Kenmack Music</a>
+    <nav class="nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#songs">Songs</a>
+      <a href="#btl">Born to Love</a>
+      <a href="#blog">Blog</a>
+      <a href="#photos">Photos</a>
+      <a href="#industry">For Industry</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<img class="banner" src="images/banner-honeysuckle.jpg" alt="Honeysuckle in bloom" width="1920" height="936">
+
+<section id="top" class="hero bg-greige">
+  <div class="wrap">
+    <div class="hero-text">
+      <p class="eyebrow">Songwriter · Huntsville, Alabama</p>
+      <h1>Real People, Real Emotions</h1>
+      <p class="hero-intro">I’m Ken Mackenzie. I write songs about people and the moments that change them, in styles ranging from Americana and country to folk, rock, indie, and pop. My lyrics are open to artists, producers, co-writers, and collaborators.</p>
+      <div class="btn-row">
+        <a class="btn" href="#songs">Explore the songs</a>
+        <a class="btn" href="#industry">For artists and publishers</a>
+      </div>
     </div>
+    <div class="hero-photo">
+      <img src="images/portrait.jpg" alt="Ken Mackenzie smiling, wearing a conference lanyard" width="555" height="694">
+    </div>
+  </div>
+</section>
+
+<div class="currently">
+  <div class="wrap">
+    <span class="eyebrow">Currently</span>
+    <span>I’m developing <strong>Born to Love</strong>, a narrative song series of seven songs paired with a six-episode limited series.</span>
+    <a href="#blog">Follow the progress</a>
+  </div>
+</div>
+
+<section id="about" class="section about">
+  <div class="wrap">
+    <div class="about-head">
+      <p class="eyebrow">About</p>
+      <h2>Inside the Human Condition</h2>
+    </div>
+    <div class="about-body">
+      <p>I came to songwriting after years of working in a hospital, where I was there for people having their best days and their worst. The work brought me close to people from every walk of life, from rocket scientists to people the world too often overlooks, and it put me inside some of the most extreme human conditions. Those years gave me a depth and range of emotional experience that colors everything I write.</p>
+      <p>I bring to the work a writer’s ear for language and my unique outlook as I write about what the human heart feels but seldom says. My vocal training shapes the writing as well, because it helps me choose words that sing as naturally as they read.</p>
+      <p>I am a member of NSAI and ASCAP, and I self-publish under Kenmack Music, LLC. I am active in my local music scene and in the SongTown online community, and I document my thoughts, progress, and process on the Kenmack Music Blog.</p>
+      <ul class="tags" aria-label="Affiliations and strengths">
+        <li>ASCAP Writer</li>
+        <li>NSAI Member</li>
+        <li>SongTown Member</li>
+        <li>Trained Vocalist</li>
+        <li>Writes Across Genres</li>
+        <li>Open to Co-Writes and Collaborations</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="songs" class="section bg-tan">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Featured songs</p>
+        <h2>Ready to Pitch</h2>
+      </div>
+      <p class="note">Each song is a finished lyric. Full lyric sheets and pitch packages are available to artists, producers, and publishers on request.</p>
+    </div>
+    <div class="songs-grid">
+      <article class="song">
+        <span class="genre">Modern Americana</span>
+        <h3>Honeysuckle Breeze</h3>
+        <p class="logline">This love story unfolds over four verses, from young love through a marriage at the breaking point and the way back.</p>
+        <blockquote>“Floating in through the screens bringing back the memories.<br>There’s something sweet and simple on that honeysuckle breeze.”</blockquote>
+        <div class="links"><a href="#contact">Request lyric sheet</a><a href="#contact">Pitch inquiry</a></div>
+      </article>
+      <article class="song">
+        <span class="genre">Classic Americana · Country</span>
+        <h3>The Best Day</h3>
+        <p class="logline">An unprepared father in the delivery room goes from witness to part of the moment that changes his life.</p>
+        <blockquote>“Never have I seen such joy in my wife.<br>This is the best day of my life.”</blockquote>
+        <div class="links"><a href="#contact">Request lyric sheet</a><a href="#contact">Pitch inquiry</a></div>
+      </article>
+      <article class="song">
+        <span class="genre">Americana · Country</span>
+        <h3>Good Morning Glory!</h3>
+        <p class="logline">Her zeal for every day inspires the outlook of the man who loves her.</p>
+        <blockquote>“Good morning glory!<br>You’re the best part of the day.”</blockquote>
+        <div class="links"><a href="#contact">Request lyric sheet</a><a href="#contact">Pitch inquiry</a></div>
+      </article>
+      <article class="song">
+        <span class="genre">Satirical country</span>
+        <h3>Nashville or Bust</h3>
+        <p class="logline">A coal miner with big dreams and every songwriter cliché in the book heads for Music City.</p>
+        <blockquote>“I got me a hit I know fo’ sho’.<br>It’s better than whatever’s on the radio.”</blockquote>
+        <div class="links"><a href="#contact">Request lyric sheet</a><a href="#contact">Pitch inquiry</a></div>
+      </article>
+    </div>
+    <p class="small-print">Lyrics © Charles K. Mackenzie / Kenmack Music, LLC. Please do not reproduce without permission.</p>
+  </div>
+</section>
+
+<section id="btl" class="section btl bg-greige">
+  <div class="wrap">
+    <div class="btl-art">
+      <img src="images/born-to-love-key-art.jpg" alt="An empty chair with a treble-clef back stands in a shaft of light among scattered paper scraps" width="960" height="960" loading="lazy">
+    </div>
+    <div class="btl-text">
+      <p class="eyebrow">In development</p>
+      <h2>Born to Love</h2>
+      <p class="lead">Born to Love is a narrative song series of seven songs, paired with a six-episode limited series. Its songs share a theme, characters, and motifs within one community, following a story that comes full circle.</p>
+      <p>Each song stands on its own, and together they tell a deeper story. A one-page series overview is available to music and media companies on request.</p>
+      <div class="btn-row">
+        <a class="btn" href="#contact">Request the overview</a>
+        <a class="btn" href="#blog">Follow the progress</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="blog" class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">On Substack</p>
+        <h2>Kenmack Music Blog</h2>
+      </div>
+      <a class="btn" href="https://kenmackmusic.substack.com">Subscribe free</a>
+    </div>
+    <div class="posts" id="posts">
+      <a class="post" href="https://kenmackmusic.substack.com/p/finding-humanity">
+        <img src="images/blog-finding-humanity.jpg" alt="" width="728" height="410" loading="lazy">
+        <span class="meta">Sep 15, 2026</span>
+        <span class="title">Finding Humanity</span>
+        <span class="sub">Under a soft white belly</span>
+      </a>
+      <a class="post" href="https://kenmackmusic.substack.com/p/the-visit">
+        <img src="images/blog-the-visit.jpg" alt="" width="900" height="720" loading="lazy" style="object-position: center 40%">
+        <span class="meta">Aug 9, 2026</span>
+        <span class="title">The Visit</span>
+        <span class="sub">Two minutes in a sixth-grade hallway</span>
+      </a>
+      <a class="post" href="https://kenmackmusic.substack.com/p/grace-note">
+        <img src="images/blog-grace-note.jpg" alt="" width="900" height="1350" loading="lazy" style="object-position: center 22%">
+        <span class="meta"><span class="featured">Featured</span> · Jun 28, 2026</span>
+        <span class="title">Grace Note</span>
+        <span class="sub">Resolving to the tonal home.</span>
+      </a>
+      <a class="post" href="https://kenmackmusic.substack.com/p/everybody-knows-her-name">
+        <img src="images/blog-everybody-knows-her-name.jpg" alt="" width="900" height="1350" loading="lazy" style="object-position: center 30%">
+        <span class="meta">Mar 19, 2026</span>
+        <span class="title">Everybody Knows Her Name</span>
+        <span class="sub">They are beginning to know mine.</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="photos" class="section bg-tan">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">Photos</p>
+        <h2>On the Road and at the Desk</h2>
+      </div>
+    </div>
+    <div class="gallery">
+      <figure>
+        <img src="images/photo-honeysuckle-draft.jpg" alt="Handwritten pencil draft of Honeysuckle Breeze on notebook paper" width="1000" height="1279" loading="lazy" style="object-position: center 15%">
+        <figcaption>Handwritten draft of “Honeysuckle Breeze”</figcaption>
+      </figure>
+      <figure>
+        <img src="images/photo-songtown-nashville.jpg" alt="Ken with Clay Mills and Marty Dodson holding songwriting books" width="1200" height="775" loading="lazy">
+        <figcaption>With Clay Mills and Marty Dodson in Nashville for the SongTown Anniversary</figcaption>
+      </figure>
+      <figure>
+        <img src="images/photo-school-office.jpg" alt="A young woman hands a worn book to a man at a desk in a 1977 school office as colleagues look on" width="1000" height="546" loading="lazy">
+        <figcaption>“The school office was full of tears, and friends I’ve had for many years”</figcaption>
+      </figure>
+      <figure>
+        <img src="images/photo-best-day.jpg" alt="New parents smiling at each other over their newborn in a hospital bed" width="1000" height="1500" loading="lazy" style="object-position: center 30%">
+        <figcaption>“Her smiling eyes turn towards me to give a look I’ve never seen”</figcaption>
+      </figure>
+      <!-- To add a photo: put the image in the images folder, then copy one <figure> block above and change the file name, description and caption. Photos past the eighth are revealed by the "Show more photos" button. -->
+    </div>
+    <div class="more-row" hidden><button type="button" class="btn" id="gallery-more" aria-expanded="false">Show more photos</button></div>
+  </div>
+</section>
+
+<section id="industry" class="section industry">
+  <div class="wrap">
+    <div class="industry-main">
+      <div>
+        <p class="eyebrow">For industry</p>
+        <h2>Publishing Information</h2>
+      </div>
+      <p>Artists, producers, publishers, and music supervisors will find my publishing and registration details here.</p>
+      <dl class="details">
+        <dt>Writer</dt><dd>Charles “Ken” Mackenzie (ASCAP)</dd>
+        <dt>Writer IPI</dt><dd>1314900387</dd>
+        <dt>Publisher</dt><dd>Kenmack Music, LLC (ASCAP), Huntsville, Alabama</dd>
+        <dt>Publisher IPI</dt><dd>1314900289</dd>
+      </dl>
+      <div class="btn-row">
+        <a class="btn" href="kenmack-music-one-sheet.pdf" download>
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"></path><path d="M7 10l5 5 5-5"></path><path d="M5 21h14"></path></svg>
+          Download one-sheet (PDF)
+        </a>
+      </div>
+    </div>
+    <div class="industry-links">
+      <h3>Useful Links</h3>
+      <!-- To add a social account later, copy one <li> line and change the address and name. -->
+      <ul class="link-list">
+        <li><a href="https://kenmackmusic.substack.com">Kenmack Music Blog on Substack<span aria-hidden="true">→</span></a></li>
+        <li><a href="https://www.facebook.com/profile.php?id=61581137535223">Kenmack Music on Facebook<span aria-hidden="true">→</span></a></li>
+        <li><a href="https://www.ascap.com">ASCAP<span aria-hidden="true">→</span></a></li>
+        <li><a href="https://songtown.com">SongTown songwriting community<span aria-hidden="true">→</span></a></li>
+        <li><a href="https://www.nashvillesongwriters.com">Nashville Songwriters Association International<span aria-hidden="true">→</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section contact bg-greige">
+  <div class="wrap">
+    <div class="contact-intro">
+      <p class="eyebrow">Contact</p>
+      <h2>Let’s Talk Songs</h2>
+      <p>Pitch requests, co-write and collaboration inquiries, and lyric sheet requests get a prompt reply.</p>
+    </div>
+    <div class="form-card">
+      <h3 class="title">Send Me a Message</h3>
+      <div class="form-success" data-fs-success role="status"></div>
+      <div class="form-error" data-fs-error role="alert"></div>
+      <form id="contact-form" class="form" action="https://formspree.io/f/xgaavjlk" method="POST">
+        <label for="cf-name">Your name
+          <input type="text" id="cf-name" name="name" required autocomplete="name" data-fs-field>
+          <span class="field-error" data-fs-error="name"></span>
+        </label>
+        <label for="cf-email">Your email
+          <input type="email" id="cf-email" name="email" required autocomplete="email" data-fs-field>
+          <span class="field-error" data-fs-error="email"></span>
+        </label>
+        <label for="cf-role" class="full">I am a…
+          <select id="cf-role" name="role" data-fs-field>
+            <option>Artist</option>
+            <option>Producer</option>
+            <option>Publisher or A&amp;R</option>
+            <option>Music supervisor</option>
+            <option>Film, TV, or media company</option>
+            <option>Fellow songwriter</option>
+            <option>Fan</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label for="cf-message" class="full">Message
+          <textarea id="cf-message" name="message" rows="5" required data-fs-field></textarea>
+          <span class="field-error" data-fs-error="message"></span>
+        </label>
+        <input type="hidden" name="_subject" value="New message from kenmackmusic.com">
+        <input type="text" name="_gotcha" class="trap" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="full"><button type="submit" class="btn" data-fs-submit-btn>Send message</button></div>
+      </form>
+      <p class="form-note">Your message comes straight to me, and your email address is used only to reply.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Kenmack Music, LLC · Huntsville, Alabama</span>
+    <!-- To add a social account later, copy one link line and change the address and name. -->
+    <nav aria-label="Footer">
+      <a href="https://kenmackmusic.substack.com">Substack</a>
+      <a href="https://www.facebook.com/profile.php?id=61581137535223">Facebook</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<dialog class="lightbox" id="lightbox" aria-label="Photo viewer">
+  <button type="button" class="lb-btn lb-close" aria-label="Close photo viewer"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></button>
+  <button type="button" class="lb-btn lb-prev" aria-label="Previous photo"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"></path></svg></button>
+  <button type="button" class="lb-btn lb-next" aria-label="Next photo"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"></path></svg></button>
+  <figure><img id="lb-img" src="" alt=""><figcaption id="lb-cap"></figcaption></figure>
+</dialog>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Photo gallery: click to enlarge, and "Show more" after the first eight.
+  (function () {
+    var SHOW_FIRST = 8;
+    var figures = Array.prototype.slice.call(document.querySelectorAll('.gallery figure'));
+    var dialog = document.getElementById('lightbox');
+    var lbImg = document.getElementById('lb-img');
+    var lbCap = document.getElementById('lb-cap');
+    var current = 0;
+
+    figures.forEach(function (fig, i) {
+      var img = fig.querySelector('img');
+      var cap = fig.querySelector('figcaption');
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'zoom';
+      btn.setAttribute('aria-label', 'Enlarge photo: ' + (cap ? cap.textContent : img.alt));
+      img.parentNode.insertBefore(btn, img);
+      btn.appendChild(img);
+      btn.addEventListener('click', function () { open(i); });
+      if (i >= SHOW_FIRST) fig.classList.add('is-hidden');
+    });
+
+    var moreRow = document.querySelector('.more-row');
+    var moreBtn = document.getElementById('gallery-more');
+    if (figures.length > SHOW_FIRST) {
+      moreRow.hidden = false;
+      moreBtn.addEventListener('click', function () {
+        var expanded = moreBtn.getAttribute('aria-expanded') === 'true';
+        figures.forEach(function (f, i) { if (i >= SHOW_FIRST) f.classList.toggle('is-hidden', expanded); });
+        moreBtn.setAttribute('aria-expanded', String(!expanded));
+        moreBtn.textContent = expanded ? 'Show more photos' : 'Show fewer photos';
+      });
+    }
+
+    function show(i) {
+      current = (i + figures.length) % figures.length;
+      var img = figures[current].querySelector('img');
+      var cap = figures[current].querySelector('figcaption');
+      lbImg.src = img.currentSrc || img.src;
+      lbImg.alt = img.alt;
+      lbCap.textContent = cap ? cap.textContent : '';
+    }
+    function open(i) {
+      show(i);
+      var single = figures.length < 2;
+      dialog.querySelector('.lb-prev').hidden = single;
+      dialog.querySelector('.lb-next').hidden = single;
+      if (dialog.showModal) dialog.showModal(); else dialog.setAttribute('open', '');
+    }
+    function close() { if (dialog.close) dialog.close(); else dialog.removeAttribute('open'); }
+
+    dialog.querySelector('.lb-close').addEventListener('click', close);
+    dialog.querySelector('.lb-prev').addEventListener('click', function () { show(current - 1); });
+    dialog.querySelector('.lb-next').addEventListener('click', function () { show(current + 1); });
+    dialog.addEventListener('click', function (e) { if (e.target === dialog) close(); });
+    dialog.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') show(current - 1);
+      if (e.key === 'ArrowRight') show(current + 1);
+    });
+  })();
+
+  // Contact form: Formspree AJAX, so visitors stay on the page.
+  window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+  formspree('initForm', { formElement: '#contact-form', formId: 'xgaavjlk' });
+
+  // Blog: show the newest posts from posts.json, which a daily GitHub Action
+  // refreshes from the Substack feed. The four cards above stay if this fails.
+  (function () {
+    var esc = function (s) { return String(s || '').replace(/[&<>"']/g, function (c) { return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]; }); };
+    fetch('posts.json', { cache: 'no-cache' })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (data) {
+        var posts = (data && data.posts) || [];
+        if (!posts.length) return;
+        document.getElementById('posts').innerHTML = posts.slice(0, 4).map(function (p) {
+          var meta = (p.featured ? '<span class="featured">Featured</span> · ' : '') + esc(p.date);
+          var pos = p.imagePosition ? ' style="object-position: ' + esc(p.imagePosition) + '"' : '';
+          var img = p.image ? '<img src="' + esc(p.image) + '" alt="" loading="lazy"' + pos + '>' : '';
+          return '<a class="post" href="' + esc(p.link) + '">' + img +
+            '<span class="meta">' + meta + '</span>' +
+            '<span class="title">' + esc(p.title) + '</span>' +
+            (p.subtitle ? '<span class="sub">' + esc(p.subtitle) + '</span>' : '') + '</a>';
+        }).join('');
+      })
+      .catch(function () {});
+  })();
+</script>
+<script src="https://unpkg.com/@formspree/ajax@1" defer></script>
 </body>
 </html>
