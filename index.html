@@ -67,13 +67,11 @@ p { margin: 0; }
 .banner-lyric { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 0 24px; background: rgba(28, 40, 30, 0.45); color: #FFFDF8; font-family: var(--serif); font-style: italic; font-size: clamp(18px, 2.6vw, 30px); text-align: center; text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5); opacity: 0; transition: opacity 0.6s ease; pointer-events: none; }
 .banner-wrap:hover .banner-lyric, .banner-wrap.show .banner-lyric { opacity: 1; }
 
-/* Hidden detail: fireflies over the top of the page in the evening */
-.hero { position: relative; overflow: hidden; }
-.fireflies { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
-.hero .wrap { position: relative; z-index: 1; }
-.firefly { position: absolute; width: 6px; height: 6px; border-radius: 50%; background: #F2CF4E; box-shadow: 0 0 8px 4px rgba(214, 170, 40, 0.55), 0 0 2px 1px #FFF3B0; opacity: 0; animation: drift var(--dur) ease-in-out var(--delay) infinite, glow var(--blink) ease-in-out var(--delay) infinite; }
-@keyframes drift { 0% { transform: translate(0, 0); } 33% { transform: translate(var(--dx), var(--dy)); } 66% { transform: translate(calc(var(--dx) * -0.6), calc(var(--dy) * 0.8)); } 100% { transform: translate(0, 0); } }
-@keyframes glow { 0%, 100% { opacity: 0; } 40% { opacity: 0; } 55% { opacity: 0.95; } 70% { opacity: 0; } }
+
+/* Hidden detail: tap the empty chair to see a lyric */
+.chair-wrap { position: relative; display: block; width: 100%; max-width: 480px; padding: 0; border: 0; background: none; cursor: pointer; font: inherit; border-radius: 6px; }
+.chair-lyric { position: absolute; left: 0; right: 0; bottom: 0; padding: 56px 24px 28px; border-radius: 0 0 6px 6px; background: linear-gradient(180deg, rgba(20, 16, 8, 0), rgba(20, 16, 8, 0.78)); color: #FFF6D8; font-family: var(--serif); font-style: italic; font-size: clamp(18px, 2vw, 22px); line-height: 1.45; text-align: center; opacity: 0; transition: opacity 0.8s ease; pointer-events: none; }
+.chair-wrap:hover .chair-lyric, .chair-wrap.show .chair-lyric { opacity: 1; }
 
 /* Email signup */
 .subscribe { margin-top: 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; padding: 28px 32px; border: 1px solid var(--rule); border-radius: 6px; background: var(--card); }
@@ -237,7 +235,6 @@ p { margin: 0; }
 </button>
 
 <section id="top" class="hero bg-greige">
-  <div class="fireflies" aria-hidden="true"></div>
   <div class="wrap">
     <div class="hero-text">
       <p class="eyebrow">Songwriter · Huntsville, Alabama</p>
@@ -330,7 +327,10 @@ p { margin: 0; }
 <section id="btl" class="section btl bg-greige">
   <div class="wrap">
     <div class="btl-art">
-      <img src="images/born-to-love-key-art.jpg" alt="An empty chair with a treble-clef back stands in a shaft of light among scattered paper scraps" width="960" height="960" loading="lazy">
+      <button type="button" class="chair-wrap" aria-label="Born to Love key art: an empty chair with a treble-clef back in a shaft of light. Select to reveal a lyric.">
+        <img src="images/born-to-love-key-art.jpg" alt="" width="960" height="960" loading="lazy">
+        <span class="chair-lyric" aria-hidden="true">“It’s the dream of her empty chair.<br>I hear her cry but no one’s there.”</span>
+      </button>
     </div>
     <div class="btl-text">
       <p class="eyebrow">In development</p>
@@ -525,40 +525,17 @@ p { margin: 0; }
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // Hidden detail: tap the banner to reveal a lyric (hover does it on a computer).
-  (function () {
-    var b = document.querySelector('.banner-wrap');
+  // Hidden details: tap the banner or the empty chair to reveal a lyric
+  // (hovering does it on a computer).
+  document.querySelectorAll('.banner-wrap, .chair-wrap').forEach(function (b) {
     var timer;
     b.addEventListener('click', function () {
       b.classList.add('show');
       clearTimeout(timer);
-      timer = setTimeout(function () { b.classList.remove('show'); }, 4000);
+      timer = setTimeout(function () { b.classList.remove('show'); }, 5000);
     });
-  })();
+  });
 
-  // Hidden detail: fireflies drift over the top of the page in the evening
-  // (7 p.m. to 6 a.m. on the visitor's own clock). Add ?fireflies to the
-  // address to see them at any hour.
-  (function () {
-    var hour = new Date().getHours();
-    var forced = /[?&]fireflies\b/.test(location.search);
-    var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (calm || !(forced || hour >= 19 || hour < 6)) return;
-    var box = document.querySelector('.fireflies');
-    for (var i = 0; i < 14; i++) {
-      var f = document.createElement('span');
-      f.className = 'firefly';
-      var r = function (a, b) { return a + Math.random() * (b - a); };
-      f.style.left = r(2, 98) + '%';
-      f.style.top = r(5, 95) + '%';
-      f.style.setProperty('--dx', r(-60, 60).toFixed(0) + 'px');
-      f.style.setProperty('--dy', r(-40, 40).toFixed(0) + 'px');
-      f.style.setProperty('--dur', r(9, 16).toFixed(1) + 's');
-      f.style.setProperty('--blink', r(3, 6).toFixed(1) + 's');
-      f.style.setProperty('--delay', (-r(0, 8)).toFixed(1) + 's');
-      box.appendChild(f);
-    }
-  })();
 
   // Photo gallery: click to enlarge, and "Show more" after the first eight.
   (function () {
