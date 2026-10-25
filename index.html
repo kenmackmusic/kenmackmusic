@@ -73,6 +73,15 @@ p { margin: 0; }
 .chair-lyric { position: absolute; left: 0; right: 0; bottom: 0; padding: 56px 24px 28px; border-radius: 0 0 6px 6px; background: linear-gradient(180deg, rgba(20, 16, 8, 0), rgba(20, 16, 8, 0.78)); color: #FFF6D8; font-family: var(--serif); font-style: italic; font-size: clamp(18px, 2vw, 22px); line-height: 1.45; text-align: center; opacity: 0; transition: opacity 0.8s ease; pointer-events: none; }
 .chair-wrap:hover .chair-lyric, .chair-wrap.show .chair-lyric { opacity: 1; }
 
+/* Hidden detail: the cicada in the footer sings when tapped */
+.footer-left { display: inline-flex; align-items: center; gap: 14px; }
+.cicada { flex: none; width: 44px; height: 44px; padding: 0; border: 2px solid #C3CCC3; border-radius: 50%; overflow: hidden; background: #D6DCD6; cursor: pointer; opacity: 0.85; transition: opacity 0.3s ease, border-color 0.3s ease; }
+.cicada:hover, .cicada[aria-pressed="true"] { opacity: 1; border-color: var(--gold-lo); }
+.cicada img { width: 100%; height: 100%; object-fit: cover; }
+.cicada[aria-pressed="true"] img { animation: buzz 0.09s linear infinite alternate; }
+@keyframes buzz { from { transform: translateX(-0.6px) rotate(-1deg); } to { transform: translateX(0.6px) rotate(1deg); } }
+@media (prefers-reduced-motion: reduce) { .cicada[aria-pressed="true"] img { animation: none; } }
+
 /* Email signup */
 .subscribe { margin-top: 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; padding: 28px 32px; border: 1px solid var(--rule); border-radius: 6px; background: var(--card); }
 .subscribe-text { flex: 1 1 320px; display: flex; flex-direction: column; gap: 8px; }
@@ -505,7 +514,10 @@ p { margin: 0; }
 
 <footer class="site-footer">
   <div class="wrap">
-    <span>© <span id="year">2026</span> Kenmack Music, LLC · Huntsville, Alabama</span>
+    <span class="footer-left">
+      <button type="button" class="cicada" aria-label="A cicada. Select to hear it sing." aria-pressed="false"><img src="images/cicada.jpg" alt="" width="160" height="160" loading="lazy"></button>
+      <span>© <span id="year">2026</span> Kenmack Music, LLC · Huntsville, Alabama</span>
+    </span>
     <!-- To add a social account later, copy one link line and change the address and name. -->
     <nav aria-label="Footer">
       <a href="https://kenmackmusic.substack.com" target="_blank" rel="noopener">Substack</a>
@@ -595,6 +607,26 @@ p { margin: 0; }
     dialog.addEventListener('keydown', function (e) {
       if (e.key === 'ArrowLeft') show(current - 1);
       if (e.key === 'ArrowRight') show(current + 1);
+    });
+  })();
+
+  // Hidden detail: tap the cicada to hear it. Sound never plays on its own.
+  (function () {
+    var btn = document.querySelector('.cicada');
+    var sound = null;
+    btn.addEventListener('click', function () {
+      if (!sound) {
+        sound = new Audio('audio/cicada-drone.mp3');
+        sound.volume = 0.45;
+        sound.addEventListener('ended', function () { btn.setAttribute('aria-pressed', 'false'); });
+      }
+      if (sound.paused) {
+        sound.currentTime = 0;
+        sound.play().then(function () { btn.setAttribute('aria-pressed', 'true'); }).catch(function () {});
+      } else {
+        sound.pause();
+        btn.setAttribute('aria-pressed', 'false');
+      }
     });
   })();
 
