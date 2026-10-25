@@ -85,14 +85,14 @@ p { margin: 0; }
 @media (max-width: 600px) { .cicada { position: absolute; top: -6px; right: 0; margin: 0; width: 56px; height: 56px; } .about-head h2 { padding-right: 64px; } }
 @media (prefers-reduced-motion: reduce) { .cicada.twitch img, .cicada[aria-pressed="true"] img { animation: none; } }
 
-/* Hidden detail: a wren perches on the corner of the Born to Love art; tapping it plays a short video */
-.wren { position: absolute; top: -18px; right: -18px; z-index: 2; width: 60px; height: 60px; padding: 0; border: 3px solid var(--greige); border-radius: 50%; overflow: hidden; background: #D6DCD6; cursor: pointer; box-shadow: 0 3px 10px rgba(30, 40, 30, 0.25); transition: transform 0.3s ease; }
+/* Hidden detail: a wren perches on the corner of the Good Morning Glory! card; tapping it plays a short video */
+.wren { position: absolute; top: -20px; right: -16px; z-index: 2; width: 60px; height: 60px; padding: 0; border: 3px solid var(--tan); border-radius: 50%; overflow: hidden; background: #D6DCD6; cursor: pointer; box-shadow: 0 3px 10px rgba(30, 40, 30, 0.25); transition: transform 0.3s ease; }
 .wren:hover { transform: scale(1.06); }
 .wren img { width: 100%; height: 100%; object-fit: cover; }
 .wren-viewer video { display: block; width: auto; max-width: 100%; max-height: 70vh; margin: 0 auto; background: #000; border-radius: 4px; }
 .wren-viewer figcaption { font-family: var(--serif); font-style: italic; font-size: 19px; }
 .wren-viewer figure { padding: 56px 40px 24px; }
-@media (max-width: 600px) { .wren { width: 50px; height: 50px; top: -12px; right: -6px; } .wren-viewer figure { padding: 56px 12px 20px; } }
+@media (max-width: 600px) { .wren { width: 50px; height: 50px; top: -14px; right: -8px; } .wren-viewer figure { padding: 56px 12px 20px; } }
 
 /* Email signup */
 .subscribe { margin-top: 48px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 40px; padding: 28px 32px; border: 1px solid var(--rule); border-radius: 6px; background: var(--card); }
@@ -128,7 +128,7 @@ p { margin: 0; }
 
 /* Songs */
 .songs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
-.song { background: var(--card); border: 1px solid #DCD1BE; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 16px; }
+.song { position: relative; background: var(--card); border: 1px solid #DCD1BE; border-radius: 6px; padding: 28px; display: flex; flex-direction: column; gap: 16px; }
 .song .genre { font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brown); }
 .song .logline { font-size: 17px; }
 .song blockquote { margin: auto 0 0; padding: 16px 18px; background: #F2ECE1; border-radius: 4px; font-family: var(--serif); font-style: italic; font-size: 18px; line-height: 1.5; }
@@ -137,7 +137,7 @@ p { margin: 0; }
 
 /* Born to Love */
 .btl .wrap { display: flex; flex-wrap: wrap; gap: 56px; align-items: center; }
-.btl-art { flex: 1 1 380px; min-width: 0; position: relative; max-width: 480px; }
+.btl-art { flex: 1 1 380px; min-width: 0; }
 .btl-art img { width: 100%; max-width: 480px; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 6px; }
 .btl-text { flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 20px; }
 .btl-text .eyebrow { margin: 0; }
@@ -328,6 +328,7 @@ p { margin: 0; }
         <div class="links"><a href="#contact">Request lyric sheet</a><a href="#contact">Pitch inquiry</a></div>
       </article>
       <article class="song">
+        <button type="button" class="wren" aria-label="A wren on a branch. Select to watch and hear it sing."><img src="images/wren-thumb.jpg" alt="" width="160" height="160" loading="lazy"></button>
         <span class="genre">Americana · Country</span>
         <h3>Good Morning Glory!</h3>
         <p class="logline">Her zeal for every day inspires the outlook of the man who loves her.</p>
@@ -353,7 +354,6 @@ p { margin: 0; }
         <img src="images/born-to-love-key-art.jpg" alt="" width="960" height="960" loading="lazy">
         <span class="chair-lyric" aria-hidden="true">“It’s the dream of her empty chair.<br>I hear her cry but no one’s there.”</span>
       </button>
-      <button type="button" class="wren" aria-label="A wren on a branch. Select to watch and hear it sing."><img src="images/wren-thumb.jpg" alt="" width="160" height="160" loading="lazy"></button>
     </div>
     <div class="btl-text">
       <p class="eyebrow">In development</p>
