@@ -73,16 +73,16 @@ p { margin: 0; }
 .chair-lyric { position: absolute; left: 0; right: 0; bottom: 0; padding: 56px 24px 28px; border-radius: 0 0 6px 6px; background: linear-gradient(180deg, rgba(20, 16, 8, 0), rgba(20, 16, 8, 0.78)); color: #FFF6D8; font-family: var(--serif); font-style: italic; font-size: clamp(18px, 2vw, 22px); line-height: 1.45; text-align: center; opacity: 0; transition: opacity 0.8s ease; pointer-events: none; }
 .chair-wrap:hover .chair-lyric, .chair-wrap.show .chair-lyric { opacity: 1; }
 
-/* Hidden detail: a cicada perches on the lower edge of the banner and sings when tapped */
-.banner-area { position: relative; }
-.cicada { position: absolute; right: 7%; bottom: -30px; z-index: 2; width: 64px; height: 64px; padding: 0; border: 3px solid #F5F0E6; border-radius: 50%; overflow: hidden; background: #D6DCD6; cursor: pointer; box-shadow: 0 3px 10px rgba(30, 40, 30, 0.28); transition: transform 0.3s ease, border-color 0.3s ease; }
+/* Hidden detail: a cicada rests under the About heading and sings when tapped */
+.about-head { position: relative; }
+.cicada { display: block; margin-top: 40px; width: 72px; height: 72px; padding: 0; border: 3px solid var(--card); border-radius: 50%; overflow: hidden; background: #D6DCD6; cursor: pointer; box-shadow: 0 3px 10px rgba(30, 40, 30, 0.22); transition: transform 0.3s ease, border-color 0.3s ease; }
 .cicada:hover { transform: scale(1.06); }
 .cicada[aria-pressed="true"] { border-color: var(--gold-hi); }
 .cicada img { width: 100%; height: 100%; object-fit: cover; }
 .cicada.twitch img { animation: buzz 0.07s linear 6 alternate; }
 .cicada[aria-pressed="true"] img { animation: buzz 0.09s linear infinite alternate; }
 @keyframes buzz { from { transform: translateX(-0.8px) rotate(-1.5deg); } to { transform: translateX(0.8px) rotate(1.5deg); } }
-@media (max-width: 600px) { .cicada { width: 52px; height: 52px; bottom: -24px; right: 5%; } }
+@media (max-width: 600px) { .cicada { position: absolute; top: -6px; right: 0; margin: 0; width: 56px; height: 56px; } .about-head h2 { padding-right: 64px; } }
 @media (prefers-reduced-motion: reduce) { .cicada.twitch img, .cicada[aria-pressed="true"] img { animation: none; } }
 
 /* Email signup */
@@ -241,13 +241,10 @@ p { margin: 0; }
 </header>
 
 <main>
-<div class="banner-area">
 <button type="button" class="banner-wrap" aria-label="Honeysuckle in bloom. Select to reveal a lyric.">
   <img class="banner" src="images/banner-honeysuckle.jpg" alt="" width="1920" height="936">
   <span class="banner-lyric" aria-hidden="true">“There’s something sweet and simple on that honeysuckle breeze.”</span>
 </button>
-<button type="button" class="cicada" aria-label="A cicada. Select to hear it sing." aria-pressed="false"><img src="images/cicada.jpg" alt="" width="160" height="160"></button>
-</div>
 
 <section id="top" class="hero bg-greige">
   <div class="wrap">
@@ -279,6 +276,7 @@ p { margin: 0; }
     <div class="about-head">
       <p class="eyebrow">About</p>
       <h2>Inside the Human Condition</h2>
+      <button type="button" class="cicada" aria-label="A cicada. Select to hear it sing." aria-pressed="false"><img src="images/cicada.jpg" alt="" width="160" height="160" loading="lazy"></button>
     </div>
     <div class="about-body">
       <p>I came to songwriting after years of working in a hospital, where I was there for people having their best days and their worst. The work brought me close to people from every walk of life, from rocket scientists to people the world too often overlooks, and it put me inside some of the most extreme human conditions. Those years gave me a depth and range of emotional experience that colors everything I write.</p>
@@ -617,7 +615,16 @@ p { margin: 0; }
   (function () {
     var btn = document.querySelector('.cicada');
     var sound = null;
-    setTimeout(function () { btn.classList.add('twitch'); setTimeout(function () { btn.classList.remove('twitch'); }, 900); }, 4000);
+    // One small twitch the first time it scrolls into view, as a hint that it's alive.
+    if ('IntersectionObserver' in window) {
+      var seen = new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) {
+          seen.disconnect();
+          setTimeout(function () { btn.classList.add('twitch'); setTimeout(function () { btn.classList.remove('twitch'); }, 900); }, 1200);
+        }
+      }, { threshold: 1 });
+      seen.observe(btn);
+    }
     btn.addEventListener('click', function () {
       if (!sound) {
         sound = new Audio('audio/cicada-drone.mp3');
