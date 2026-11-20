@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-24",
+  "updated": "2026-11-20",
   "posts": [
     {
       "title": "Finding Humanity",
@@ -10,31 +10,29 @@
       "featured": false
     },
     {
-      "title": "The Visit",
-      "subtitle": "Two minutes in a sixth-grade hallway",
-      "date": "Aug 9, 2026",
-      "link": "https://kenmackmusic.substack.com/p/the-visit",
-      "image": "images/blog-the-visit-2026.jpg",
-      "imagePosition": "center 40%",
+      "title": "\u201cCarolina in the Pines\u201d",
+      "subtitle": "This song made an impression on me when as a boy I first heard it. \"Carolina in the Pines\" by Michael Martin Murphey, 1975",
+      "date": "Sep 8, 2026",
+      "link": "https://kenmackmusic.substack.com/p/carolina-in-the-pines",
+      "image": "https://substackcdn.com/image/fetch/$s_!iIee!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F886561e3-7f1c-4d54-94b3-55b20703c942_1536x1024.jpeg",
       "featured": false
     },
     {
-      "title": "Grace Note",
-      "subtitle": "Resolving to the tonal home.",
+      "title": "Lucky #13",
+      "subtitle": "It ain&#8217;t final &#8216;til it&#8217;s vinyl",
+      "date": "Aug 22, 2026",
+      "link": "https://kenmackmusic.substack.com/p/lucky-13",
+      "image": "https://substackcdn.com/image/fetch/$s_!jfxQ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F359e6a93-bf7c-4b59-8f0d-43d1d336f61f_864x989.jpeg",
+      "featured": false
+    },
+    {
+      "title": "\"Grace Note\"",
+      "subtitle": "It took me longer to write it than any other song, but I've finally finished the last song in the Born to Love series. Sure, I'll find some ways to revise for improvement, but for now, all the parts are in place and the project can move forward as a whole.",
       "date": "Jun 28, 2026",
       "link": "https://kenmackmusic.substack.com/p/grace-note",
       "image": "images/blog-grace-note.jpg",
-      "imagePosition": "center 22%",
-      "featured": true
-    },
-    {
-      "title": "Everybody Knows Her Name",
-      "subtitle": "They are beginning to know mine.",
-      "date": "Mar 19, 2026",
-      "link": "https://kenmackmusic.substack.com/p/everybody-knows-her-name",
-      "image": "images/blog-everybody-knows-her-name.jpg",
-      "imagePosition": "center 30%",
-      "featured": false
+      "featured": true,
+      "imagePosition": "center 22%"
     }
   ]
 }
