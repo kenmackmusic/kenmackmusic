@@ -1,6 +1,14 @@
 {
-  "updated": "2026-11-20",
+  "updated": "2026-11-28",
   "posts": [
+    {
+      "title": "First Takes",
+      "subtitle": "An open house at Five Points Recording turns into a jam session",
+      "date": "Nov 21, 2026",
+      "link": "https://kenmackmusic.substack.com/p/first-takes",
+      "image": "https://substackcdn.com/image/fetch/$s_!YLvw!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0500af68-e77a-43cc-aa48-32c81ed916f6_4000x2252.jpeg",
+      "featured": false
+    },
     {
       "title": "Finding Humanity",
       "subtitle": "Under a soft white belly",
@@ -15,14 +23,6 @@
       "date": "Sep 8, 2026",
       "link": "https://kenmackmusic.substack.com/p/carolina-in-the-pines",
       "image": "https://substackcdn.com/image/fetch/$s_!iIee!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F886561e3-7f1c-4d54-94b3-55b20703c942_1536x1024.jpeg",
-      "featured": false
-    },
-    {
-      "title": "Lucky #13",
-      "subtitle": "It ain&#8217;t final &#8216;til it&#8217;s vinyl",
-      "date": "Aug 22, 2026",
-      "link": "https://kenmackmusic.substack.com/p/lucky-13",
-      "image": "https://substackcdn.com/image/fetch/$s_!jfxQ!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F359e6a93-bf7c-4b59-8f0d-43d1d336f61f_864x989.jpeg",
       "featured": false
     },
     {
